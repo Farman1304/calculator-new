@@ -1,0 +1,29 @@
+body {
+    background-color: #d9d7d7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inptDiv {
+    width: 400px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+button {
+    padding:20px !important;
+}
+
+
+.inptDiv input {
+    padding: 40px;
+}
+
+
+.btns {
+     border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
