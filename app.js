@@ -19,7 +19,7 @@
         function clearData () {
 
             recData.value= '';
-            // result.value = '';
+            result.value = '';
 
         }
 
@@ -27,25 +27,28 @@
             recData.value= recData.value.slice (0,-1);
         }
 
-        var isOkay = false;
+        
         function calculateNow () {
+
             var opt = ['/','+','-', '%','*','.'];
 
-            for(var i = 0 ; i < opt.length; i++) {
-                if(recData.value[0] === opt [i] || recData.value [recData.value.length -1] === opt[i] ||
-                    recData.value === opt [i] + opt[i] ) {
-                
-                    result.value = 'Error'
-                    isOkay = true;
-                    return;
-                }
-            }
-            var finalResult = eval (recData.value);
-            
-            result.value = finalResult;
-        } 
-        
+if(opt.includes (recData.value[0]) || opt.includes(recData.value[recData.value.length -1])) {
+    result.value = 'Error'
+    return;
+}
 
+    for(var i = 0; i < opt.length ; i ++ ) {
+        if(opt.includes(recData.value[i]) && opt.includes(recData.value [i + 1])) {
+            result.value = 'Error'
+            return;
+        }
+    }
+        
       
 
+var finalResult = eval (recData.value);
 
+result.value = finalResult;
+
+
+        }
